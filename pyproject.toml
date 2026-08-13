@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "leadgen-ai"
+version = "0.1.0"
+description = "Local-first, low-token company lead discovery and outreach review pipeline"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+browser = ["playwright>=1.45,<2"]
+sheets = ["gspread>=6,<7", "google-auth>=2,<3"]
+
+[project.scripts]
+leadgen = "leadgen_ai.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

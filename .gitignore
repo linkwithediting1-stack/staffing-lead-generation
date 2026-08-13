@@ -1,0 +1,13 @@
+.env
+config.json
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+data/*.db
+data/*.db-*
+data/seeds.csv
+data/browser-profile/
+outputs/*.csv
+outputs/*.jsonl
+outputs/*.log

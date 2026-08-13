@@ -1,0 +1,83 @@
+{
+  "database_path": "data/leadgen.db",
+  "output_directory": "outputs",
+  "seed_file": "data/seeds.csv",
+  "search": {
+    "provider": "none",
+    "endpoint": "http://127.0.0.1:8080",
+    "api_key_env": "SEARXNG_API_KEY",
+    "queries": [
+      "India SaaS company hiring careers",
+      "India startup hiring sales team",
+      "India company multiple job openings"
+    ],
+    "results_per_query": 15
+  },
+  "crawler": {
+    "max_domains": 50,
+    "max_pages_per_domain": 8,
+    "delay_seconds": 1.5,
+    "timeout_seconds": 20,
+    "max_response_bytes": 2000000,
+    "respect_robots": true,
+    "user_agent": "LeadGenAI/0.1 (+public-company-research)",
+    "allowed_domains": [],
+    "denied_domains": [
+      "instagram.com",
+      "facebook.com",
+      "linkedin.com",
+      "x.com",
+      "twitter.com",
+      "indeed.com",
+      "naukri.com",
+      "foundit.in",
+      "wellfound.com",
+      "glassdoor.com"
+    ],
+    "use_browser": false,
+    "browser_profile_directory": "data/browser-profile",
+    "browser_scroll_steps": 4
+  },
+  "target": {
+    "locations": ["India", "Delhi", "Gurugram", "Noida", "Bengaluru", "Mumbai", "Pune", "Chandigarh", "Mohali"],
+    "industries": ["software", "SaaS", "fintech", "e-commerce", "manufacturing", "logistics", "healthcare"],
+    "hiring_terms": ["we are hiring", "we're hiring", "open positions", "job openings", "join our team", "careers", "vacancies"],
+    "minimum_score": 45,
+    "ai_review_threshold": 35
+  },
+  "ai": {
+    "enabled": false,
+    "base_url": "http://127.0.0.1:11434/v1",
+    "api_key_env": "AI_API_KEY",
+    "model": "",
+    "timeout_seconds": 45,
+    "max_input_characters": 3500,
+    "max_output_tokens": 220,
+    "max_reviews_per_run": 20
+  },
+  "outreach": {
+    "company_name": "99 Staffing Services",
+    "sender_name": "Your Name",
+    "service_summary": "help growing companies hire verified candidates for hard-to-fill roles",
+    "booking_url": "",
+    "minimum_score": 60,
+    "daily_send_limit": 15,
+    "require_approval": true,
+    "opt_out_line": "If hiring support is not relevant, reply no and I will not follow up."
+  },
+  "smtp": {
+    "host": "",
+    "port": 587,
+    "username_env": "SMTP_USERNAME",
+    "password_env": "SMTP_PASSWORD",
+    "from_email_env": "SMTP_FROM_EMAIL",
+    "starttls": true,
+    "ssl": false
+  },
+  "google_sheets": {
+    "enabled": false,
+    "spreadsheet_url": "",
+    "worksheet": "Leads",
+    "credentials_file_env": "GOOGLE_SERVICE_ACCOUNT_FILE"
+  }
+}
